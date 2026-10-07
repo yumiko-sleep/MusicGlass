@@ -4,6 +4,7 @@
 > 与 QQ音乐互通，实时显示歌名 / 歌手 / 封面 / 进度，并提供播放控制。
 
 ![音璃 MusicGlass 界面预览](docs/screenshot.png)
+![音璃实拍效果](docs/screenshot-live.png)
 
 **功能速览**
 
