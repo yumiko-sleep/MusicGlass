@@ -1,0 +1,22 @@
+# 音璃 MusicGlass — 运行依赖
+# 安装：pip install -r requirements.txt
+
+# ---- UI 框架 ----
+PyQt6>=6.6                  # 窗口、绘制、动画、托盘（QSystemTrayIcon 是 Qt 内置的，不需要 pystray）
+
+# ---- 液态玻璃（真折射）----
+pyglass-qt>=0.3.0           # 注意：包名是 pyglass-qt，import 名是 pyglass
+numpy>=1.24                 # pyglass 的依赖；我们也用它做封面缩放 / 频谱条随机数
+
+# ---- Windows 媒体传输控件 SMTC（阶段 2 用）----
+# winrt 系是微软官方 pywinrt 绑定，比 win32 的 COM 调用干净得多，也不需要 pywin32
+winrt-runtime>=3.2.1
+winrt-Windows.Media.Control>=3.2.1
+winrt-Windows.Storage.Streams>=3.2.1
+winrt-Windows.Foundation>=3.2.1
+# get_sessions() 返回的是 WinRT 的 IVectorView，没有这个包会报
+# ModuleNotFoundError: No module named 'winrt.windows.foundation.collections'
+winrt-Windows.Foundation.Collections>=3.2.1
+
+# ---- 图像处理（封面 / 图标，阶段 5 打包用）----
+Pillow>=10

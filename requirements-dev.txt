@@ -1,0 +1,5 @@
+# 音璃 MusicGlass — 开发与打包依赖
+# 安装：pip install -r requirements-dev.txt
+
+pytest>=8.0        # 单元测试
+pyinstaller>=6.22  # 阶段5：打包成单个 exe

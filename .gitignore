@@ -1,0 +1,34 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyc
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- 打包产物 ----
+build/
+dist/
+*.spec.bak
+packaging/output/
+
+# ---- 运行时 / 本地配置 ----
+*.log
+config.local.json
+
+# ---- 测试与调试产出（不进仓库）----
+soak_*.csv
+probe_cover.png
+tray_icon_preview.png
+*.jsonl
+MusicGlass-acl-reports/
+.pytmp/
+pytest-of-Administrator/
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.swp

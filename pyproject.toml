@@ -1,0 +1,50 @@
+[project]
+name = "musicglass"
+version = "0.5.0"
+description = "音璃 MusicGlass —— 常驻桌面的液态玻璃音乐小组件（与 QQ音乐互通）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "yumiko-sleep" }]
+keywords = ["pyqt6", "widget", "desktop", "music", "glassmorphism", "smtc"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Win32 (MS Windows)",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+dependencies = [
+    "PyQt6>=6.6",
+    "pyglass-qt>=0.3.0",
+    "numpy>=1.24",
+    "winrt-runtime>=3.2.1",
+    "winrt-Windows.Media.Control>=3.2.1",
+    "winrt-Windows.Storage.Streams>=3.2.1",
+    "winrt-Windows.Foundation>=3.2.1",
+    "Pillow>=10",
+]
+
+# 这个项目不做成 pip 可安装的包（是应用不是库），
+# 所以只声明元信息 + 工具配置，打包交给 PyInstaller。
+[tool.setuptools]
+packages = ["musicglass"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning:musicglass.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# 只开常用规则，避免一上来就淹没在几百条提示里
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]   # 行宽交给 line-length + formatter 管
